@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, Star, CheckCircle, Package, Truck, Shield, Leaf, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
+import SEO from '../components/SEO'
 
 const ProductDetail = () => {
   const { id: _id } = useParams()
@@ -110,8 +111,63 @@ Our Moringa powder is sourced from certified organic farms in India, ensuring th
     setSelectedImage((prev) => (prev - 1 + product.images.length) % product.images.length)
   }
 
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.description,
+    "image": product.images.map(img => `https://krishivglobals.com${img.src}`),
+    "brand": {
+      "@type": "Brand",
+      "name": "Krishiv Globals"
+    },
+    "category": "Health Supplements",
+    "sku": product.id,
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD",
+      "seller": {
+        "@type": "Organization",
+        "name": "Krishiv Globals"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": product.rating.toString(),
+      "reviewCount": product.reviews.toString()
+    },
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Form",
+        "value": product.specifications.Form
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Color",
+        "value": product.specifications.Color
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Shelf Life",
+        "value": product.specifications['Shelf Life']
+      }
+    ]
+  }
+
   return (
-    <div className="pt-16 lg:pt-20">
+    <>
+      <SEO
+        title={`${product.name} - Premium Organic Moringa Powder | Krishiv Globals`}
+        description={`${product.description} GMP, ISO, USDA certified. ${product.rating}/5 rating from ${product.reviews} reviews. Premium quality Moringa powder for global wellness trade.`}
+        keywords={`${product.name}, organic Moringa powder, premium Moringa, GMP certified Moringa, ISO certified Moringa, USDA organic Moringa, health supplements, superfood, nutraceutical, wellness products, bulk Moringa, wholesale Moringa, export quality Moringa, Moringa Oleifera`}
+        image={product.images[selectedImage].src}
+        url={`/products/${product.id}`}
+        type="product"
+        structuredData={productStructuredData}
+      />
+      <div className="pt-16 lg:pt-20">
       {/* Breadcrumb */}
       <section className="bg-gray-50 py-3 sm:py-4">
         <div className="container-custom px-4 sm:px-6">
@@ -465,7 +521,8 @@ Our Moringa powder is sourced from certified organic farms in India, ensuring th
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

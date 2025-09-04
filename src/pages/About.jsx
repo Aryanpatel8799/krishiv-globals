@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Target, Eye, Users, Globe, Award, Leaf, TrendingUp, Heart, Factory, Truck, Shield, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import SEO from '../components/SEO'
 
 const About = () => {
   const values = [
@@ -54,8 +55,33 @@ const About = () => {
     }
   ]
 
+  const aboutStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Krishiv Globals",
+    "description": "Learn about Krishiv Globals - Leading global exporter of premium Moringa products with 15+ years experience",
+    "url": "https://krishivglobals.com/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Krishiv Globals",
+      "foundingDate": "2008",
+      "description": "Leading global exporter of premium Moringa products with international certifications",
+      "numberOfEmployees": "50-100",
+      "areaServed": "Worldwide"
+    }
+  }
+
   return (
-    <div className="pt-16 lg:pt-20">
+    <>
+      <SEO
+        title="About Krishiv Globals - Leading Global Moringa Exporter | 15+ Years Experience"
+        description="Learn about Krishiv Globals - Leading global exporter of premium Moringa products with 15+ years experience, serving 50+ countries with GMP, ISO, USDA certifications."
+        keywords="About Krishiv Globals, Moringa exporter, global wellness trade, 15 years experience, GMP certified, ISO certified, USDA organic, sustainable agriculture, premium Moringa products, international certifications"
+        image="/images/moringa-hero.png"
+        url="/about"
+        structuredData={aboutStructuredData}
+      />
+      <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container-custom">
@@ -327,7 +353,8 @@ const About = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

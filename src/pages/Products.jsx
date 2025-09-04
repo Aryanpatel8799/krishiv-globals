@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Star, CheckCircle, MessageCircle } from 'lucide-react'
 import ProductImage from '../components/ProductImage'
+import SEO from '../components/SEO'
 
 const Products = () => {
   const handleWhatsAppQuote = (productName) => {
@@ -26,8 +27,55 @@ const Products = () => {
     }
   ]
 
+  const productsStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Premium Moringa Products",
+    "description": "Discover our premium Moringa powder collection with international certifications",
+    "url": "https://krishivglobals.com/products",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "name": "Premium Moringa Powder",
+          "description": "Premium organic Moringa leaf powder rich in nutrients and antioxidants",
+          "image": "https://krishivglobals.com/images/moringa-powder-bowls.png",
+          "brand": {
+            "@type": "Brand",
+            "name": "Krishiv Globals"
+          },
+          "category": "Health Supplements",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "priceCurrency": "USD",
+            "seller": {
+              "@type": "Organization",
+              "name": "Krishiv Globals"
+            }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "128"
+          }
+        }
+      ]
+    }
+  }
+
   return (
-    <div className="pt-16 lg:pt-20">
+    <>
+      <SEO
+        title="Premium Moringa Products | Organic Moringa Powder - Krishiv Globals"
+        description="Discover our premium Moringa powder collection. Organic, GMP certified, ISO certified Moringa products with 4.9/5 rating. International quality standards for global wellness trade."
+        keywords="Moringa powder, organic Moringa, premium Moringa, GMP certified Moringa, ISO certified Moringa, Moringa products, health supplements, superfood, nutraceutical, wellness products, bulk Moringa, wholesale Moringa, export quality Moringa"
+        image="/images/moringa-powder-bowls.png"
+        url="/products"
+        structuredData={productsStructuredData}
+      />
+      <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container-custom">
@@ -240,7 +288,8 @@ const Products = () => {
           </motion.div>
         </div>
       </section> */}
-    </div>
+      </div>
+    </>
   )
 }
 

@@ -12,6 +12,7 @@ import {
   Award,
   CheckCircle
 } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const Home = () => {
   const features = [
@@ -44,8 +45,35 @@ const Home = () => {
   //   { number: "100%", label: "Quality Assured", icon: <Shield className="w-8 h-8" /> }
   // ]
 
+  const homeStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Krishiv Globals",
+    "url": "https://krishivglobals.com",
+    "description": "Leading global exporter of premium Moringa products with international certifications",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Krishiv Globals",
+      "url": "https://krishivglobals.com"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://krishivglobals.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+
   return (
-    <div className="pt-16 lg:pt-20">
+    <>
+      <SEO
+        title="Krishiv Globals - Premium Moringa Products | Global Wellness Trade Leader"
+        description="Leading global exporter of premium Moringa powder with GMP, ISO, USDA, FSSAI certifications. 15+ years experience, 50+ countries served. Sustainable, organic Moringa products for wellness industry."
+        keywords="Moringa powder, Moringa Oleifera, organic Moringa, GMP certified Moringa, ISO certified Moringa, USDA organic Moringa, FSSAI certified, wellness products, superfood, nutraceutical, health supplements, global trade, sustainable agriculture, premium quality, export quality, bulk Moringa, wholesale Moringa, B2B Moringa, international certifications, farm to export, direct farm partnerships"
+        image="/images/moringa-hero.png"
+        url="/"
+        structuredData={homeStructuredData}
+      />
+      <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-green-50 overflow-hidden px-4">
         {/* Background Elements */}
@@ -329,7 +357,8 @@ const Home = () => {
           </motion.div>
         </div>
       </section> */}
-    </div>
+      </div>
+    </>
   )
 }
 

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock, Globe, Building, MessageCircle } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const Contact = () => {
   const handleWhatsAppContact = () => {
@@ -38,8 +39,44 @@ const Contact = () => {
     { day: "Sunday", hours: "Closed" }
   ]
 
+  const contactStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Krishiv Globals",
+    "description": "Get in touch with Krishiv Globals for premium Moringa products and business partnerships",
+    "url": "https://krishivglobals.com/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Krishiv Globals",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Plot no 40A Bhandara Road",
+        "addressLocality": "Nagpur",
+        "addressRegion": "Maharashtra",
+        "postalCode": "440008",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-94202-55477",
+        "contactType": "customer service",
+        "email": "krishivglobal@gmail.com",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    }
+  }
+
   return (
-    <div className="pt-16 lg:pt-20">
+    <>
+      <SEO
+        title="Contact Krishiv Globals - Premium Moringa Products | Get Quote & Business Partnership"
+        description="Contact Krishiv Globals for premium Moringa products, business partnerships, and wholesale inquiries. Located in Nagpur, Maharashtra. Call +91-94202-55477 or email krishivglobal@gmail.com"
+        keywords="Contact Krishiv Globals, Moringa products contact, business partnership, wholesale Moringa, bulk Moringa orders, Moringa exporter contact, Nagpur Maharashtra, +91-94202-55477, krishivglobal@gmail.com"
+        image="/images/moringa-hero.png"
+        url="/contact"
+        structuredData={contactStructuredData}
+      />
+      <div className="pt-16 lg:pt-20">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container-custom">
@@ -208,7 +245,8 @@ const Contact = () => {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 
