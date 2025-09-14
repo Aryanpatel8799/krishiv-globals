@@ -64,7 +64,7 @@ const About = () => {
     "mainEntity": {
       "@type": "Organization",
       "name": "Krishiv Globals",
-      "foundingDate": "2008",
+      "foundingDate": "2024",
       "description": "Leading global exporter of premium Moringa products with international certifications",
       "numberOfEmployees": "50-100",
       "areaServed": "Worldwide"
@@ -81,7 +81,7 @@ const About = () => {
         url="/about"
         structuredData={aboutStructuredData}
       />
-      <div className="pt-16 lg:pt-20">
+      <div className="pt-28 sm:pt-32 lg:pt-36 xl:pt-40">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container-custom">
@@ -146,7 +146,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-sm sm:text-base text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 2008, Krishiv Globals has been at the forefront of the global 
+                  Founded in 2024, Krishiv Globals has been at the forefront of the global 
                   wellness trade, specializing in premium Moringa products. What started as a 
                   small family business has grown into an internationally recognized leader 
                   in sustainable agriculture and wellness exports.
@@ -157,7 +157,7 @@ const About = () => {
                   standards of quality and sustainability.
                 </p>
                 <p>
-                  Today, we serve customers in over 50 countries, maintaining our commitment 
+                  Today, we serve customers in over 5+ countries, maintaining our commitment 
                   to excellence, innovation, and environmental responsibility.
                 </p>
               </div>
@@ -251,10 +251,10 @@ const About = () => {
               <div className="bg-gradient-to-br from-primary-100 to-accent-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12">
                 <div className="grid grid-cols-2 gap-4 sm:gap-6">
                   {[
-                    { icon: <Globe className="w-10 h-10 sm:w-12 sm:h-12" />, label: "Global Reach", value: "50+ Countries" },
+                    { icon: <Globe className="w-10 h-10 sm:w-12 sm:h-12" />, label: "Global Reach", value: "5+ Countries" },
                     { icon: <Award className="w-10 h-10 sm:w-12 sm:h-12" />, label: "Certifications", value: "GMP, ISO, USDA" },
                     { icon: <Leaf className="w-10 h-10 sm:w-12 sm:h-12" />, label: "Products", value: "100% Natural" },
-                    { icon: <TrendingUp className="w-10 h-10 sm:w-12 sm:h-12" />, label: "Growth", value: "15+ Years" }
+                    { icon: <TrendingUp className="w-10 h-10 sm:w-12 sm:h-12" />, label: "Growth", value: "2+ Years" }
                   ].map((stat, index) => (
                     <div key={index} className="text-center">
                       <div className="text-primary-600 mb-2 flex justify-center">

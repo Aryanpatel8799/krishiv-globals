@@ -15,85 +15,231 @@ const ProductDetail = () => {
     window.open(whatsappUrl, '_blank');
   };
 
-  // Mock product data - in a real app, this would come from an API
-  const product = {
-    id: 'moringa-powder',
-    name: 'Moringa Powder',
-    description: 'Known as the "Miracle Tree", moringa is among the most nutrient-dense plants in the world. Our premium Moringa powder is carefully sourced from certified organic farms and processed using state-of-the-art facilities to maintain maximum nutritional value.',
-    longDescription: `Moringa Oleifera, often called the "Miracle Tree" or "Tree of Life", is one of the most nutrient-dense plants on Earth. Our premium Moringa powder is harvested from young, tender leaves at the peak of their nutritional content, then carefully dried and ground to preserve all the essential nutrients.
+  // Product data - in a real app, this would come from an API
+  const productsData = {
+    'moringa-powder': {
+      id: 'moringa-powder',
+      name: 'Moringa Powder',
+      description: 'Known as the "Miracle Tree", moringa is among the most nutrient-dense plants in the world. Our premium Moringa powder is carefully sourced from certified organic farms and processed using state-of-the-art facilities to maintain maximum nutritional value.',
+      longDescription: `Moringa Oleifera, often called the "Miracle Tree" or "Tree of Life", is one of the most nutrient-dense plants on Earth. Our premium Moringa powder is harvested from young, tender leaves at the peak of their nutritional content, then carefully dried and ground to preserve all the essential nutrients.
 
 This superfood contains all 9 essential amino acids, making it a complete protein source. It's rich in vitamins A, C, E, K, and B-complex, along with essential minerals like calcium, iron, potassium, and magnesium. The powder also contains powerful antioxidants that help combat free radicals and support overall health.
 
 Our Moringa powder is sourced from certified organic farms in India, ensuring the highest quality and purity standards. Every batch undergoes rigorous testing for quality, safety, and nutritional content.`,
-    images: [
-      {
-        id: 1,
-        src: '/images/moringa-powder-jar.png',
-        alt: 'Premium Moringa Powder in glass jar with fresh leaves',
-        title: 'Premium Moringa Powder'
+      images: [
+        {
+          id: 1,
+          src: '/images/moringa-powder-jar.png',
+          alt: 'Premium Moringa Powder in glass jar with fresh leaves',
+          title: 'Premium Moringa Powder'
+        },
+        {
+          id: 2,
+          src: '/images/moringa-powder-bowls.png',
+          alt: 'Moringa powder and dried leaves in glass bowls',
+          title: 'Natural Processing'
+        },
+        {
+          id: 3,
+          src: '/images/moringa-tea-cups.png',
+          alt: 'Moringa tea in cups with fresh mint leaves',
+          title: 'Perfect for Tea'
+        },
+        {
+          id: 4,
+          src: '/images/moringa-products-collection.png',
+          alt: 'Moringa oil, fresh leaves, and dried seeds collection',
+          title: 'Complete Moringa Range'
+        }
+      ],
+      category: 'Powder',
+      rating: 4.9,
+      reviews: 128,
+      features: [
+        'All 9 Essential Amino Acids',
+        'Rich in Vitamins A, C, E, K, B-complex',
+        'High in Minerals (Calcium, Iron, Potassium)',
+        'Antioxidant Rich',
+        'Complete Protein Source',
+        'Natural Energy Booster'
+      ],
+      specifications: {
+        'Form': 'Fine Powder',
+        'Color': 'Bright Green',
+        'Taste': 'Mild, Earthy',
+        'Shelf Life': '24 Months',
+        'Storage': 'Store in cool, dry place',
+        'Packaging': 'Food-grade containers'
       },
-      {
-        id: 2,
-        src: '/images/moringa-powder-bowls.png',
-        alt: 'Moringa powder and dried leaves in glass bowls',
-        title: 'Natural Processing'
-      },
-      {
-        id: 3,
-        src: '/images/moringa-tea-cups.png',
-        alt: 'Moringa tea in cups with fresh mint leaves',
-        title: 'Perfect for Tea'
-      },
-      {
-        id: 4,
-        src: '/images/moringa-products-collection.png',
-        alt: 'Moringa oil, fresh leaves, and dried seeds collection',
-        title: 'Complete Moringa Range'
-      }
-    ],
-    category: 'Powder',
-    rating: 4.9,
-    reviews: 128,
-    features: [
-      'All 9 Essential Amino Acids',
-      'Rich in Vitamins A, C, E, K, B-complex',
-      'High in Minerals (Calcium, Iron, Potassium)',
-      'Antioxidant Rich',
-      'Complete Protein Source',
-      'Natural Energy Booster'
-    ],
-    specifications: {
-      'Form': 'Fine Powder',
-      'Color': 'Bright Green',
-      'Taste': 'Mild, Earthy',
-      'Shelf Life': '24 Months',
-      'Storage': 'Store in cool, dry place',
-      'Packaging': 'Food-grade containers'
+      benefits: [
+        'Supports immune system health',
+        'Promotes healthy skin and hair',
+        'Boosts energy and vitality',
+        'Supports digestive health',
+        'Rich in antioxidants',
+        'Natural detoxification support'
+      ],
+      usage: [
+        'Add to smoothies and juices',
+        'Mix with water or milk',
+        'Sprinkle on salads or soups',
+        'Blend into protein shakes',
+        'Use in baking recipes',
+        'Take as a daily supplement'
+      ],
+      price: 'Premium Quality',
+      availability: 'In Stock',
+      certifications: ['GMP', 'ISO', 'USDA', 'FSSAI', 'Organic']
     },
-    benefits: [
-      'Supports immune system health',
-      'Promotes healthy skin and hair',
-      'Boosts energy and vitality',
-      'Supports digestive health',
-      'Rich in antioxidants',
-      'Natural detoxification support'
-    ],
-    usage: [
-      'Add to smoothies and juices',
-      'Mix with water or milk',
-      'Sprinkle on salads or soups',
-      'Blend into protein shakes',
-      'Use in baking recipes',
-      'Take as a daily supplement'
-    ],
-    price: 'Premium Quality',
-    availability: 'In Stock',
-    certifications: ['GMP', 'ISO', 'USDA', 'FSSAI', 'Organic']
+    'moringa-oil': {
+      id: 'moringa-oil',
+      name: 'Moringa Oil',
+      description: 'Moringa oil, extracted from the seeds of the Moringa Oleifera tree, is a nutrient-rich, lightweight oil renowned for its anti-inflammatory, antioxidant, and deeply moisturizing properties.',
+      longDescription: `Moringa oil is extracted from the seeds of the Moringa Oleifera tree through a cold-pressing process that preserves all the natural nutrients and beneficial compounds. This lightweight, non-greasy oil is packed with vitamins A, C, and E, along with essential fatty acids that provide deep nourishment for both skin and hair.
+
+The oil contains high levels of oleic acid, which helps maintain the skin's natural moisture barrier, while its anti-inflammatory properties help soothe irritated skin and reduce redness. Rich in antioxidants, Moringa oil helps protect against environmental damage and premature aging.
+
+Our Moringa oil is 100% pure and natural, with no additives or preservatives. It's cold-pressed to maintain maximum nutritional value and is perfect for skincare, haircare, and wellness applications.`,
+      images: [
+        {
+            id: 1,
+            src: '/images/moringaoil.png',
+          alt: 'Moringa oil bottle with fresh leaves',
+          title: 'Premium Moringa Oil'
+        },
+        {
+          id: 2,
+          src: '/images/c4.png',
+          alt: 'Moringa oil in glass container',
+          title: 'Pure & Natural'
+        },
+        {
+          id: 3,
+          src: '/images/image copy.png',
+          alt: 'Moringa oil and seeds collection',
+          title: 'Cold-Pressed Quality'
+        },
+        // {
+        //   id: 4,
+        //   src: '/images/moringa-tea-cups.png',
+        //   alt: 'Moringa oil for skincare and haircare',
+        //   title: 'Versatile Applications'
+        // }
+      ],
+      category: 'Oil',
+      rating: 4.8,
+      reviews: 95,
+      features: [
+        'Anti-Inflammatory Properties',
+        'Rich in Vitamins A, C & E',
+        'Deeply Moisturizing',
+        '100% Pure & Natural',
+        'Cold-Pressed for Maximum Nutrition',
+        'Lightweight & Non-Greasy'
+      ],
+      specifications: {
+        'Form': 'Liquid Oil',
+        'Color': 'Light Golden',
+        'Texture': 'Lightweight, Non-Greasy',
+        'Shelf Life': '36 Months',
+        'Storage': 'Store in cool, dry place away from light',
+        'Packaging': 'Dark glass bottles'
+      },
+      benefits: [
+        'Nourishes and hydrates dry skin',
+        'Reduces fine lines and wrinkles',
+        'Strengthens hair follicles',
+        'Reduces dandruff and promotes shine',
+        'Soothes minor irritations and acne',
+        'Natural anti-aging properties'
+      ],
+      usage: [
+        'Apply directly to skin as moisturizer',
+        'Use as hair oil for deep conditioning',
+        'Massage into scalp for hair growth',
+        'Add to bath water for skin nourishment',
+        'Use as carrier oil for essential oils',
+        'Apply to cuticles and nails'
+      ],
+      price: 'Premium Quality',
+      availability: 'In Stock',
+      certifications: ['GMP', 'ISO', 'USDA', 'FSSAI', 'Organic']
+    },
+    'moringa-capsules': {
+      id: 'moringa-capsules',
+      name: 'Moringa Capsules',
+      description: 'Our Moringa Capsules are made from 100% pure and organic Moringa Oleifera leaves, carefully dried and processed to preserve maximum nutrition. Known as the "Miracle Tree", moringa is a natural superfood packed with essential vitamins, minerals, and antioxidants.',
+      longDescription: `Our Moringa Capsules contain 100% pure and organic Moringa Oleifera leaves that have been carefully harvested, dried, and processed to preserve maximum nutritional value. Each capsule is packed with the incredible benefits of this "Miracle Tree" in a convenient, easy-to-take format.
+
+These capsules are rich in essential vitamins including A, C, E, K, and B-complex vitamins, along with vital minerals like calcium, iron, potassium, and magnesium. They also contain all 9 essential amino acids, making them a complete protein source, plus powerful antioxidants that help combat free radicals.
+
+Our capsules are made with no fillers, additives, or artificial ingredients. They are GMP and FSSAI certified, ensuring the highest quality and safety standards. Perfect for those who want the benefits of Moringa in a convenient daily supplement form.`,
+      images: [
+        {
+          id: 1,
+          src: '/images/moringacapsule.png',
+          alt: 'Moringa capsules in bottle',
+          title: 'Premium Moringa Capsules'
+        },
+        {
+          id: 2,
+          src: '/images/image copy.png',
+          alt: 'Moringa capsules and powder',
+          title: '100% Organic & Vegan'
+        },
+        {
+          id: 3,
+          src: '/images/image copy 2.png',
+          alt: 'Moringa capsules for daily nutrition',
+          title: 'Convenient Daily Nutrition'
+        },
+      ],
+      category: 'Capsules',
+      rating: 4.9,
+      reviews: 112,
+      features: [
+        'Boosts Immunity',
+        'Supports Energy & Vitality',
+        'Aids Digestion',
+        'Balances Metabolism',
+        '100% Organic & Vegan',
+        'No Fillers or Additives'
+      ],
+      specifications: {
+        'Form': 'Capsules',
+        'Color': 'Green Powder in Capsules',
+        'Dosage': '1-2 capsules daily',
+        'Shelf Life': '36 Months',
+        'Storage': 'Store in cool, dry place',
+        'Packaging': 'Food-grade bottles'
+      },
+      benefits: [
+        'Boosts immune system with vitamin C and zinc',
+        'Supports energy and fights fatigue naturally',
+        'Promotes healthy digestion with high fiber content',
+        'Supports weight management and metabolism',
+        'Promotes healthy skin and hair',
+        'Rich in antioxidants for overall wellness'
+      ],
+      usage: [
+        'Take 1-2 capsules daily with water',
+        'Best taken with meals for better absorption',
+        'Can be taken morning or evening',
+        'Consult healthcare professional for dosage',
+        'Maintain consistent daily intake',
+        'Store in original container'
+      ],
+      price: 'Premium Quality',
+      availability: 'In Stock',
+      certifications: ['GMP', 'ISO', 'USDA', 'FSSAI', 'Organic']
+    }
   }
+
+  const product = productsData[_id]
 
   if (!product) {
     return (
-      <div className="pt-16 lg:pt-20">
+      <div className="pt-28 sm:pt-32 lg:pt-36 xl:pt-40">
         <div className="container-custom text-center py-20">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h1>
           <p className="text-gray-600 mb-8">The product you're looking for doesn't exist.</p>
@@ -167,7 +313,7 @@ Our Moringa powder is sourced from certified organic farms in India, ensuring th
         type="product"
         structuredData={productStructuredData}
       />
-      <div className="pt-16 lg:pt-20">
+      <div className="pt-28 sm:pt-32 lg:pt-36 xl:pt-40">
       {/* Breadcrumb */}
       <section className="bg-gray-50 py-3 sm:py-4">
         <div className="container-custom px-4 sm:px-6">
@@ -352,7 +498,7 @@ Our Moringa powder is sourced from certified organic farms in India, ensuring th
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
-              About Our Moringa Powder
+              About Our {product.name}
             </h2>
             <div className="prose prose-base sm:prose-lg max-w-none text-gray-600">
               <p className="mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">{product.longDescription}</p>
@@ -375,7 +521,7 @@ Our Moringa powder is sourced from certified organic farms in India, ensuring th
               Health Benefits
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover the incredible health benefits of our premium Moringa powder
+              Discover the incredible health benefits of our premium {product.name}
             </p>
           </motion.div>
 
@@ -415,7 +561,7 @@ Our Moringa powder is sourced from certified organic farms in India, ensuring th
               How to Use
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-              Simple and versatile ways to incorporate Moringa powder into your daily routine
+              Simple and versatile ways to incorporate {product.name} into your daily routine
             </p>
           </motion.div>
 
@@ -477,7 +623,7 @@ Our Moringa powder is sourced from certified organic farms in India, ensuring th
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-              Ready to Experience Premium Moringa?
+              Ready to Experience Premium {product.name}?
             </h2>
             <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
               Get in touch with us to learn more about our products and start your wellness journey.

@@ -24,6 +24,30 @@ const Products = () => {
       features: ['High Protein', 'Rich in Vitamins', 'Antioxidant Rich', '100% Natural'],
       price: 'Premium Quality',
       availability: 'In Stock'
+    },
+    {
+      id: 'moringa-oil',
+      name: 'Moringa Oil',
+      description: 'Nutrient-rich, lightweight oil renowned for its anti-inflammatory, antioxidant, and deeply moisturizing properties.',
+      image: '/images/moringaoil.png',
+      category: 'Oil',
+      rating: 4.8,
+      reviews: 95,
+      features: ['Anti-Inflammatory', 'Antioxidant Rich', 'Deeply Moisturizing', '100% Pure & Natural'],
+      price: 'Premium Quality',
+      availability: 'In Stock'
+    },
+    {
+      id: 'moringa-capsules',
+      name: 'Moringa Capsules',
+      description: 'Made from 100% pure and organic Moringa Oleifera leaves, carefully dried and processed to preserve maximum nutrition.',
+      image: '/images/capsule.png',
+      category: 'Capsules',
+      rating: 4.9,
+      reviews: 112,
+      features: ['Boosts Immunity', 'Supports Energy', 'Aids Digestion', '100% Organic & Vegan'],
+      price: 'Premium Quality',
+      availability: 'In Stock'
     }
   ]
 
@@ -31,51 +55,50 @@ const Products = () => {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Premium Moringa Products",
-    "description": "Discover our premium Moringa powder collection with international certifications",
+    "description": "Discover our premium Moringa products collection with international certifications",
     "url": "https://krishivglobals.com/products",
     "mainEntity": {
       "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "Product",
-          "name": "Premium Moringa Powder",
-          "description": "Premium organic Moringa leaf powder rich in nutrients and antioxidants",
-          "image": "https://krishivglobals.com/images/moringa-powder-bowls.png",
-          "brand": {
-            "@type": "Brand",
+      "itemListElement": products.map((product, index) => ({
+        "@type": "Product",
+        "position": index + 1,
+        "name": product.name,
+        "description": product.description,
+        "image": `https://krishivglobals.com${product.image}`,
+        "brand": {
+          "@type": "Brand",
+          "name": "Krishiv Globals"
+        },
+        "category": "Health Supplements",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "USD",
+          "seller": {
+            "@type": "Organization",
             "name": "Krishiv Globals"
-          },
-          "category": "Health Supplements",
-          "offers": {
-            "@type": "Offer",
-            "availability": "https://schema.org/InStock",
-            "priceCurrency": "USD",
-            "seller": {
-              "@type": "Organization",
-              "name": "Krishiv Globals"
-            }
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "128"
           }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": product.rating.toString(),
+          "reviewCount": product.reviews.toString()
         }
-      ]
+      }))
     }
   }
 
   return (
     <>
       <SEO
-        title="Premium Moringa Products | Organic Moringa Powder - Krishiv Globals"
-        description="Discover our premium Moringa powder collection. Organic, GMP certified, ISO certified Moringa products with 4.9/5 rating. International quality standards for global wellness trade."
-        keywords="Moringa powder, organic Moringa, premium Moringa, GMP certified Moringa, ISO certified Moringa, Moringa products, health supplements, superfood, nutraceutical, wellness products, bulk Moringa, wholesale Moringa, export quality Moringa"
-        image="/images/moringa-powder-bowls.png"
+        title="Premium Moringa Products | Organic Moringa Powder, Oil & Capsules - Krishiv Globals"
+        description="Discover our premium Moringa products collection including powder, oil, and capsules. Organic, GMP certified, ISO certified Moringa products with 4.9/5 rating. International quality standards for global wellness trade."
+        keywords="Moringa powder, Moringa oil, Moringa capsules, organic Moringa, premium Moringa, GMP certified Moringa, ISO certified Moringa, Moringa products, health supplements, superfood, nutraceutical, wellness products, bulk Moringa, wholesale Moringa, export quality Moringa"
+        image="/images/moringa-products-collection.png"
         url="/products"
         structuredData={productsStructuredData}
       />
-      <div className="pt-16 lg:pt-20">
+      <div className="pt-28 sm:pt-32 lg:pt-36 xl:pt-40">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container-custom">
@@ -89,7 +112,7 @@ const Products = () => {
               Our <span className="text-primary-600">Products</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed px-4">
-              Discover our premium Moringa Powder, carefully sourced and 
+              Discover our premium Moringa products collection, carefully sourced and 
               processed to maintain the highest quality standards.
             </p>
           </motion.div>
@@ -107,15 +130,15 @@ const Products = () => {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-              Premium Moringa Powder
+              Premium Moringa Products
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
-              Our flagship product crafted with care, ensuring you receive the purest and 
-              most beneficial Moringa powder available.
+              Our complete range of Moringa products crafted with care, ensuring you receive the purest and 
+              most beneficial Moringa products available.
             </p>
           </motion.div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {products.map((product, index) => (
               <motion.div
                 key={product.id}

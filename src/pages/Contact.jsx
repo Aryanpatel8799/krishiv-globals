@@ -76,7 +76,7 @@ const Contact = () => {
         url="/contact"
         structuredData={contactStructuredData}
       />
-      <div className="pt-16 lg:pt-20">
+      <div className="pt-28 sm:pt-32 lg:pt-36 xl:pt-40">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-green-50 via-white to-green-50">
         <div className="container-custom">

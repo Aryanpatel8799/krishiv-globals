@@ -13,8 +13,38 @@ import {
   CheckCircle
 } from 'lucide-react'
 import SEO from '../components/SEO'
+import ImageCarousel from '../components/ImageCarousel'
 
 const Home = () => {
+  // Business images for the carousel - same images used for all devices (mobile, tablet, desktop)
+  const businessImages = [
+    {
+      src: '/images/c1.png',
+      alt: 'Premium Moringa Products Collection',
+      title: 'Our Premium Moringa Products'
+    },
+    {
+      src: '/images/c2.png',
+      alt: 'Moringa Powder Processing Facility',
+      title: 'Quality Processing Facility'
+    },
+    {
+      src: '/images/c3.png',
+      alt: 'Moringa Powder Packaging',
+      title: 'Premium Packaging Standards'
+    },
+    {
+      src: '/images/c4.png',
+      alt: 'Moringa Tea Products',
+      title: 'Versatile Product Range'
+    },
+    // {
+    //   src: '/images/moringa-products-collection.png',
+    //   alt: 'Complete Moringa Product Line',
+    //   title: 'Complete Product Portfolio'
+    // }
+  ]
+
   const features = [
     {
       icon: <Factory className="w-10 h-10" />,
@@ -73,12 +103,12 @@ const Home = () => {
         url="/"
         structuredData={homeStructuredData}
       />
-      <div className="pt-16 lg:pt-20">
+      <div className="pt-28 sm:pt-32 lg:pt-36 xl:pt-40">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-white to-green-50 overflow-hidden px-4">
         {/* Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-r from-primary-200 to-accent-200 rounded-full blur-3xl opacity-20"></div>
+          <div className="absolute top-28 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-r from-primary-200 to-accent-200 rounded-full blur-3xl opacity-20"></div>
           <div className="absolute bottom-20 right-4 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full blur-3xl opacity-20"></div>
         </div>
 
@@ -160,6 +190,13 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Business Gallery Carousel */}
+      <ImageCarousel 
+        images={businessImages} 
+        title="Our Business Gallery" 
+        showTitle={true}
+      />
 
       {/* Features Section */}
       <section className="section-padding bg-white relative">
@@ -260,7 +297,7 @@ const Home = () => {
                 Leading the Global Wellness Market
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                With over 15 years of experience, Krishiv Globals has established itself as a trusted partner 
+                With over 2+ years of experience, Krishiv Globals has established itself as a trusted partner 
                 in the international wellness industry. Our commitment to quality, sustainability, and customer 
                 satisfaction drives everything we do.
               </p>
