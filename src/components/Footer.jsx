@@ -27,10 +27,9 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com/company/krishiv-globals' },
-    { name: 'X (Twitter)', icon: '🐦', url: 'https://x.com/krishivglobals' },
-    { name: 'Instagram', icon: '📸', url: 'https://instagram.com/krishivglobals' },
-    { name: 'Facebook', icon: '📘', url: 'https://facebook.com/krishivglobals' }
+    { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/company/krishiv-globals/?viewAsMember=true' },
+    { name: 'Instagram', icon: '📸', url: 'https://www.instagram.com/krishivglobals/' },
+    { name: 'Facebook', icon: '📘', url: 'https://www.facebook.com/profile.php?id=61579907761759' }
   ]
 
   return (
@@ -184,7 +183,27 @@ const Footer = () => {
           </div>
 
           {/* Social Media & Newsletter */}
-          
+          <div className="mt-12 border-t border-gray-800 pt-8">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    aria-label={item.name}
+                    className="inline-flex items-center gap-2 text-gray-300 hover:text-primary-400 transition-colors"
+                  >
+                    <span className="text-lg" aria-hidden>
+                      {item.icon}
+                    </span>
+                    <span className="text-sm hidden sm:inline">{item.name}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
