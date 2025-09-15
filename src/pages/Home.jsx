@@ -97,7 +97,7 @@ const Home = () => {
     <>
       <SEO
         title="Krishiv Globals - Premium Moringa Products | Global Wellness Trade Leader"
-        description="Leading global exporter of premium Moringa powder with GMP, ISO, USDA, FSSAI certifications. 15+ years experience, 50+ countries served. Sustainable, organic Moringa products for wellness industry."
+        description="Leading global exporter of premium Moringa powder with GMP, ISO, USDA, FSSAI certifications. 2+ years experience, 5+ countries served. Sustainable, organic Moringa products for wellness industry."
         keywords="Moringa powder, Moringa Oleifera, organic Moringa, GMP certified Moringa, ISO certified Moringa, USDA organic Moringa, FSSAI certified, wellness products, superfood, nutraceutical, health supplements, global trade, sustainable agriculture, premium quality, export quality, bulk Moringa, wholesale Moringa, B2B Moringa, international certifications, farm to export, direct farm partnerships"
         image="/images/moringa-hero.png"
         url="/"
