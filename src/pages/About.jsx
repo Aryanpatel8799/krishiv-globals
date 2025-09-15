@@ -59,7 +59,7 @@ const About = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Krishiv Globals",
-    "description": "Learn about Krishiv Globals - Leading global exporter of premium Moringa products with 15+ years experience",
+    "description": "Learn about Krishiv Globals - Leading global exporter of premium Moringa products with 2+ years experience",
     "url": "https://krishivglobals.com/about",
     "mainEntity": {
       "@type": "Organization",
@@ -74,9 +74,9 @@ const About = () => {
   return (
     <>
       <SEO
-        title="About Krishiv Globals - Leading Global Moringa Exporter | 15+ Years Experience"
-        description="Learn about Krishiv Globals - Leading global exporter of premium Moringa products with 15+ years experience, serving 50+ countries with GMP, ISO, USDA certifications."
-        keywords="About Krishiv Globals, Moringa exporter, global wellness trade, 15 years experience, GMP certified, ISO certified, USDA organic, sustainable agriculture, premium Moringa products, international certifications"
+        title="About Krishiv Globals - Leading Global Moringa Exporter | 2+ Years Experience"
+        description="Learn about Krishiv Globals - Leading global exporter of premium Moringa products with 2+ years experience, serving 5+ countries with GMP, ISO, USDA certifications."
+        keywords="About Krishiv Globals, Moringa exporter, global wellness trade, 2 years experience, GMP certified, ISO certified, USDA organic, sustainable agriculture, premium Moringa products, international certifications"
         image="/images/moringa-hero.png"
         url="/about"
         structuredData={aboutStructuredData}
