@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, Globe, Award, Shield, Clock, MessageCircle } from 'lucide-react'
+import { Linkedin, Instagram, Facebook } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -26,10 +27,11 @@ const Footer = () => {
     ]
   }
 
+
   const socialLinks = [
-    { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/company/krishiv-globals/?viewAsMember=true' },
-    { name: 'Instagram', icon: '📸', url: 'https://www.instagram.com/krishivglobals/' },
-    { name: 'Facebook', icon: '📘', url: 'https://www.facebook.com/profile.php?id=61579907761759' }
+    { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, url: 'https://www.linkedin.com/company/krishiv-globals/?viewAsMember=true' },
+    { name: 'Instagram', icon: <Instagram className="w-5 h-5" />, url: 'https://www.instagram.com/krishivglobals/' },
+    { name: 'Facebook', icon: <Facebook className="w-5 h-5" />, url: 'https://www.facebook.com/profile.php?id=61579907761759' }
   ]
 
   return (
